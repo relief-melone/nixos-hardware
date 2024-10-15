@@ -19,6 +19,6 @@
     # Thanks to j.book for figuring that one out
 
     name = "Fix freeze after sleep";
-    path = ./kernel-patches/sleep.patch;
+    patch = ./kernel-patches/sleep.patch;
   }];
 }
