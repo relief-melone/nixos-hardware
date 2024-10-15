@@ -14,7 +14,11 @@
     nvidiaBusId = "PCI:1:0:0";
   };
 
-  boot.kernelPatches = [
-    ./kernel-patches/sleep.patch
-  ];
+  boot.kernelPatches = [{
+    # See https://discourse.nixos.org/t/fix-freeze-after-wake-from-sleep-suspend-with-intel-raptor-lake-and-alder-lake-p/51677
+    # Thanks to j.book for figuring that one out
+
+    name = "Fix freeze after sleep";
+    path = ./kernel-patches/sleep.patch;
+  }];
 }
